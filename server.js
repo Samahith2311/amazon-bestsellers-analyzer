@@ -2,8 +2,9 @@ const express = require('express');
 require('dotenv').config();
 const db = require('./db');
 
-const app = express();
+const app =  express();
 const PORT = 3000;
+app.use(express.static('public'));
 
 // Get the latest snapshot of every book (current rankings)
 app.get('/api/books', (req, res) => {
